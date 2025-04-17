@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Pelaporan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .status-box {
+      background-color: #b6f0c1;
+      color: #000;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    select, input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .checkbox-container {
+      margin-bottom: 20px;
+    }
+
+    .checkbox-container input {
+      margin-right: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Banner Gambar -->
+    <img src="https://via.placeholder.com/400x150" alt="Banner" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+
+    <!-- Status Laporan -->
+    <div class="status-box">
+      📅 Check Status Laporan<br>
+      Sudah Melakukan Laporan? Anda Bisa Melihat Laporan Anda Disini!
+    </div>
+
+    <!-- Form Pelaporan -->
+    <form>
+      <div class="section-title">Form Pelaporan</div>
+
+      <label for="kategori">Pilih Pengaduan</label>
+      <select id="kategori" required>
+        <option value="">Pilih Pengaduan</option>
+        <option value="parkir">Parkir Liar</option>
+        <option value="trotoar">Trotoar Rusak</option>
+        <option value="lampu">Lampu jalan rusak</option>
+        <option value="drainase">Drainase tersumbat</option>
+      </select>
+
+      <!-- Upload Foto -->
+      <label for="foto">Ambil Foto <span style="color: red;">*</span></label>
+      <input type="file" id="foto" accept="image/*" required>
+
+      <!-- Checkbox Konfirmasi -->
+      <div class="checkbox-container">
+        <input type="checkbox" id="konfirmasi" required>
+        <label for="konfirmasi">
+          Saya memastikan, hingga sejauh kemampuan dan pengetahuan saya, bahwa semua informasi yang diungkapkan di atas adalah akurat dan benar.
+        </label>
+      </div>
+
+      <!-- Tombol Submit -->
+      <button type="submit">Kirim Laporan</button>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+      <p>© Pemerintah Kota Banda Aceh</p>
+      <p>Didukung oleh instansi dan komunitas lokal</p>
+    </footer>
+  </div>
+</body>
+</html>

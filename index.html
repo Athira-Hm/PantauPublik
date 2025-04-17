@@ -1,38 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Form Pelaporan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #121212;
       color: white;
-      margin: 0;
-      padding: 0;
     }
 
-    .container {
-      max-width: 400px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .status-box {
-      background-color: #b6f0c1;
-      color: #000;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    h2 {
-      margin-top: 0;
-    }
-
-    select, input[type="file"] {
+    select,
+    input[type="file"] {
       width: 100%;
       padding: 12px;
       margin-top: 10px;
@@ -40,22 +22,11 @@
       border-radius: 8px;
       border: none;
       font-size: 16px;
+      background-color: #2a2a2a;
+      color: white;
     }
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .checkbox-container {
-      margin-bottom: 20px;
-    }
-
-    .checkbox-container input {
-      margin-right: 10px;
-    }
-
-    button {
+    button[type="submit"] {
       width: 100%;
       padding: 15px;
       background-color: #4CAF50;
@@ -67,69 +38,107 @@
       cursor: pointer;
     }
 
-    button:hover {
+    button[type="submit"]:hover {
       background-color: #45a049;
     }
-
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      color: #aaa;
-      text-align: center;
-    }
-
-    .section-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
   </style>
 </head>
-<body>
-  <div class="container">
-    <!-- Banner Gambar -->
-    <img src="https://via.placeholder.com/400x150" alt="Banner" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
 
-    <!-- Status Laporan -->
-    <div class="status-box">
+<body>
+  <!-- Header -->
+  <header class="relative mx-10">
+    <div class="w-full h-32 bg-gray-700 relative overflow-hidden rounded-b-lg">
+      <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-600 opacity-50"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="absolute top-0 left-0 right-0 p-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-20 flex items-center justify-center">
+          <img src="Logo.png" alt="Logo">
+        </div>
+      </div>
+
+      <div class="flex space-x-4 text-sm items-center relative">
+        <a href="#" class="text-white">BERANDA</a>
+
+        <!-- Dropdown untuk menu LAPOR -->
+        <div class="group relative">
+          <button class="text-white">LAPOR</button>
+          <div class="absolute hidden group-hover:block bg-white text-black mt-2 rounded shadow-lg z-50 w-40">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Lapor Baru</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Riwayat Laporan</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Statistik</a>
+          </div>
+        </div>
+
+        <a href="#" class="text-white">PORTAL</a>
+        <a href="#" class="text-white">TENTANG</a>
+        <button class="bg-blue-500 text-white px-4 py-1 rounded">MASUK</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-600 rounded-b-3xl p-8 mb-8 mx-10 mt-10">
+    <div class="max-w-2xl">
+      <h1 class="text-3xl font-bold mb-2">PANTAU PUBLIK</h1>
+      <p class="text-green-300 text-xl mb-6">Wujudkan Kota Menjadi #LebihBaik<br>Bersama-Sama</p>
+      <button class="bg-white text-blue-600 px-6 py-2 rounded-md font-bold">LAPOR</button>
+    </div>
+  </section>
+
+  <!-- Main Form Container -->
+  <div class="bg-[#1e1e1e] p-6 rounded-lg shadow-lg mx-10">
+    <!-- Banner -->
+    <img src="https://via.placeholder.com/1200x200" alt="Banner" class="w-full rounded mb-6">
+
+    <!-- Status Box -->
+    <div class="bg-green-200 text-black font-bold p-4 rounded mb-6">
       📅 Check Status Laporan<br>
       Sudah Melakukan Laporan? Anda Bisa Melihat Laporan Anda Disini!
     </div>
 
-    <!-- Form Pelaporan -->
-    <form>
-      <div class="section-title">Form Pelaporan</div>
-
-      <label for="kategori">Pilih Pengaduan</label>
-      <select id="kategori" required>
-        <option value="">Pilih Pengaduan</option>
-        <option value="parkir">Parkir Liar</option>
-        <option value="trotoar">Trotoar Rusak</option>
-        <option value="lampu">Lampu jalan rusak</option>
-        <option value="drainase">Drainase tersumbat</option>
+   <!-- Form -->
+<form>
+    <h2 class="text-xl font-bold mb-4">Form Pelaporan</h2>
+  
+    <!-- Pilih Pengaduan -->
+    <div class="mb-6">
+      <label for="kategori" class="block mb-2">Pilih Pengaduan</label>
+      <select id="kategori" required class="bg-[#2a2a2a] text-white px-4 py-2 rounded w-full max-w-sm">
+        <option value="" disabled selected>Pilih Pengaduan</option>
+        <option value="parkir">🚗 Parkir Liar</option>
+        <option value="trotoar">🚶 Trotoar Rusak</option>
+        <option value="lampu">💡 Lampu Jalan Rusak</option>
+        <option value="drainase">🌧️ Drainase Tersumbat</option>
       </select>
-
-      <!-- Upload Foto -->
-      <label for="foto">Ambil Foto <span style="color: red;">*</span></label>
-      <input type="file" id="foto" accept="image/*" required>
-
-      <!-- Checkbox Konfirmasi -->
-      <div class="checkbox-container">
-        <input type="checkbox" id="konfirmasi" required>
-        <label for="konfirmasi">
-          Saya memastikan, hingga sejauh kemampuan dan pengetahuan saya, bahwa semua informasi yang diungkapkan di atas adalah akurat dan benar.
-        </label>
-      </div>
-
-      <!-- Tombol Submit -->
-      <button type="submit">Kirim Laporan</button>
-    </form>
+    </div>
+  
+    <!-- Upload Foto -->
+    <div class="mb-6">
+      <label for="foto" class="block mb-2">Ambil Foto <span class="text-red-500">*</span></label>
+      <input type="file" id="foto" accept="image/*" required class="bg-[#2a2a2a] text-white px-4 py-2 rounded w-full max-w-sm">
+    </div>
+  
+    <!-- Konfirmasi -->
+    <div class="mb-6">
+      <input type="checkbox" id="konfirmasi" required class="mr-2">
+      <label for="konfirmasi" class="text-sm">
+        Saya memastikan, hingga sejauh kemampuan dan pengetahuan saya, bahwa semua informasi yang diungkapkan di atas adalah akurat dan benar.
+      </label>
+    </div>
+  
+    <button type="submit" class="bg-green-600 hover:bg-green-500 px-6 py-3 rounded font-bold w-full max-w-sm">Kirim Laporan</button>
+  </form>
+  
 
     <!-- Footer -->
-    <footer>
+    <footer class="text-xs text-gray-400 text-center mt-10">
       <p>© Pemerintah Kota Banda Aceh</p>
       <p>Didukung oleh instansi dan komunitas lokal</p>
     </footer>
   </div>
 </body>
+
 </html>
